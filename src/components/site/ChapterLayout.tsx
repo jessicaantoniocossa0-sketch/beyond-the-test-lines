@@ -60,7 +60,7 @@ export function ChapterLayout({ to, titulo, lead, nota, children }: Props) {
             <span className="flex items-center gap-2 text-sm text-muted-foreground">
               <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" /> Anterior
             </span>
-            <span className="mt-1 block font-display text-2xl">Capa</span>
+            <span className="mt-1 block font-display text-2xl">Início</span>
           </Link>
         )}
         {seguinte && (

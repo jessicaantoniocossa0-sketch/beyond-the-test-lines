@@ -14,15 +14,22 @@ export function SiteHeader() {
           <span className="red-note text-lg">académica</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Capítulos">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Capítulos">
+          <Link
+            to="/"
+            className="rounded-md px-2.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            activeProps={{ className: "text-primary font-medium" }}
+            activeOptions={{ exact: true }}
+          >
+            Início
+          </Link>
           {capitulos.map((c) => (
             <Link
               key={c.to}
               to={c.to}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-md px-2.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-primary font-medium" }}
             >
-              <span className="mr-1 font-mono text-xs opacity-60">{c.numero}</span>
               {c.titulo}
             </Link>
           ))}
@@ -30,7 +37,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border xl:hidden"
           aria-label={aberto ? "Fechar menu" : "Abrir menu"}
           aria-expanded={aberto}
           onClick={() => setAberto((v) => !v)}
@@ -40,8 +47,20 @@ export function SiteHeader() {
       </div>
 
       {aberto && (
-        <nav className="border-t border-border bg-background lg:hidden" aria-label="Capítulos">
+        <nav className="border-t border-border bg-background xl:hidden" aria-label="Capítulos">
           <ul className="mx-auto max-w-6xl px-5 py-2">
+            <li>
+              <Link
+                to="/"
+                onClick={() => setAberto(false)}
+                className="flex items-baseline gap-3 border-b border-border/60 py-3"
+                activeProps={{ className: "text-primary" }}
+                activeOptions={{ exact: true }}
+              >
+                <span className="font-mono text-xs text-muted-foreground">00</span>
+                <span className="font-display text-lg">Início</span>
+              </Link>
+            </li>
             {capitulos.map((c) => (
               <li key={c.to}>
                 <Link

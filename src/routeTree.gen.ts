@@ -14,6 +14,7 @@ import { Route as ConclusaoRouteImport } from './routes/conclusao'
 import { Route as ConsequenciasRouteImport } from './routes/consequencias'
 import { Route as DesenvolvimentoRouteImport } from './routes/desenvolvimento'
 import { Route as IntroducaoRouteImport } from './routes/introducao'
+import { Route as ObjectivosRouteImport } from './routes/objectivos'
 import { Route as PrevencaoRouteImport } from './routes/prevencao'
 import { Route as ReferenciasRouteImport } from './routes/referencias'
 
@@ -42,6 +43,11 @@ const IntroducaoRoute = IntroducaoRouteImport.update({
   path: '/introducao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObjectivosRoute = ObjectivosRouteImport.update({
+  id: '/objectivos',
+  path: '/objectivos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrevencaoRoute = PrevencaoRouteImport.update({
   id: '/prevencao',
   path: '/prevencao',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/consequencias': typeof ConsequenciasRoute
   '/desenvolvimento': typeof DesenvolvimentoRoute
   '/introducao': typeof IntroducaoRoute
+  '/objectivos': typeof ObjectivosRoute
   '/prevencao': typeof PrevencaoRoute
   '/referencias': typeof ReferenciasRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/consequencias': typeof ConsequenciasRoute
   '/desenvolvimento': typeof DesenvolvimentoRoute
   '/introducao': typeof IntroducaoRoute
+  '/objectivos': typeof ObjectivosRoute
   '/prevencao': typeof PrevencaoRoute
   '/referencias': typeof ReferenciasRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/consequencias': typeof ConsequenciasRoute
   '/desenvolvimento': typeof DesenvolvimentoRoute
   '/introducao': typeof IntroducaoRoute
+  '/objectivos': typeof ObjectivosRoute
   '/prevencao': typeof PrevencaoRoute
   '/referencias': typeof ReferenciasRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/consequencias'
     | '/desenvolvimento'
     | '/introducao'
+    | '/objectivos'
     | '/prevencao'
     | '/referencias'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/consequencias'
     | '/desenvolvimento'
     | '/introducao'
+    | '/objectivos'
     | '/prevencao'
     | '/referencias'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/consequencias'
     | '/desenvolvimento'
     | '/introducao'
+    | '/objectivos'
     | '/prevencao'
     | '/referencias'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   ConsequenciasRoute: typeof ConsequenciasRoute
   DesenvolvimentoRoute: typeof DesenvolvimentoRoute
   IntroducaoRoute: typeof IntroducaoRoute
+  ObjectivosRoute: typeof ObjectivosRoute
   PrevencaoRoute: typeof PrevencaoRoute
   ReferenciasRoute: typeof ReferenciasRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IntroducaoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/objectivos': {
+      id: '/objectivos'
+      path: '/objectivos'
+      fullPath: '/objectivos'
+      preLoaderRoute: typeof ObjectivosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/prevencao': {
       id: '/prevencao'
       path: '/prevencao'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConsequenciasRoute: ConsequenciasRoute,
   DesenvolvimentoRoute: DesenvolvimentoRoute,
   IntroducaoRoute: IntroducaoRoute,
+  ObjectivosRoute: ObjectivosRoute,
   PrevencaoRoute: PrevencaoRoute,
   ReferenciasRoute: ReferenciasRoute,
 }

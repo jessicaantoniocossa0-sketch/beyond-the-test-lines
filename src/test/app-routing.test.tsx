@@ -17,6 +17,7 @@ describe("App routing", () => {
   it("keeps the chapters in reading order", () => {
     expect(capitulos.map((c) => c.titulo)).toEqual([
       "Introdução",
+      "Objectivos",
       "Desenvolvimento",
       "Consequências",
       "Prevenção",
