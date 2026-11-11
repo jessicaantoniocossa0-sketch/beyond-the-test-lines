@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConclusaoRouteImport } from './routes/conclusao'
+import { Route as ConsequenciasRouteImport } from './routes/consequencias'
+import { Route as DesenvolvimentoRouteImport } from './routes/desenvolvimento'
+import { Route as IntroducaoRouteImport } from './routes/introducao'
+import { Route as PrevencaoRouteImport } from './routes/prevencao'
+import { Route as ReferenciasRouteImport } from './routes/referencias'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConclusaoRoute = ConclusaoRouteImport.update({
+  id: '/conclusao',
+  path: '/conclusao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsequenciasRoute = ConsequenciasRouteImport.update({
+  id: '/consequencias',
+  path: '/consequencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesenvolvimentoRoute = DesenvolvimentoRouteImport.update({
+  id: '/desenvolvimento',
+  path: '/desenvolvimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntroducaoRoute = IntroducaoRouteImport.update({
+  id: '/introducao',
+  path: '/introducao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrevencaoRoute = PrevencaoRouteImport.update({
+  id: '/prevencao',
+  path: '/prevencao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenciasRoute = ReferenciasRouteImport.update({
+  id: '/referencias',
+  path: '/referencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/conclusao': typeof ConclusaoRoute
+  '/consequencias': typeof ConsequenciasRoute
+  '/desenvolvimento': typeof DesenvolvimentoRoute
+  '/introducao': typeof IntroducaoRoute
+  '/prevencao': typeof PrevencaoRoute
+  '/referencias': typeof ReferenciasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/conclusao': typeof ConclusaoRoute
+  '/consequencias': typeof ConsequenciasRoute
+  '/desenvolvimento': typeof DesenvolvimentoRoute
+  '/introducao': typeof IntroducaoRoute
+  '/prevencao': typeof PrevencaoRoute
+  '/referencias': typeof ReferenciasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/conclusao': typeof ConclusaoRoute
+  '/consequencias': typeof ConsequenciasRoute
+  '/desenvolvimento': typeof DesenvolvimentoRoute
+  '/introducao': typeof IntroducaoRoute
+  '/prevencao': typeof PrevencaoRoute
+  '/referencias': typeof ReferenciasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/conclusao'
+    | '/consequencias'
+    | '/desenvolvimento'
+    | '/introducao'
+    | '/prevencao'
+    | '/referencias'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/conclusao'
+    | '/consequencias'
+    | '/desenvolvimento'
+    | '/introducao'
+    | '/prevencao'
+    | '/referencias'
+  id:
+    | '__root__'
+    | '/'
+    | '/conclusao'
+    | '/consequencias'
+    | '/desenvolvimento'
+    | '/introducao'
+    | '/prevencao'
+    | '/referencias'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConclusaoRoute: typeof ConclusaoRoute
+  ConsequenciasRoute: typeof ConsequenciasRoute
+  DesenvolvimentoRoute: typeof DesenvolvimentoRoute
+  IntroducaoRoute: typeof IntroducaoRoute
+  PrevencaoRoute: typeof PrevencaoRoute
+  ReferenciasRoute: typeof ReferenciasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conclusao': {
+      id: '/conclusao'
+      path: '/conclusao'
+      fullPath: '/conclusao'
+      preLoaderRoute: typeof ConclusaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consequencias': {
+      id: '/consequencias'
+      path: '/consequencias'
+      fullPath: '/consequencias'
+      preLoaderRoute: typeof ConsequenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desenvolvimento': {
+      id: '/desenvolvimento'
+      path: '/desenvolvimento'
+      fullPath: '/desenvolvimento'
+      preLoaderRoute: typeof DesenvolvimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/introducao': {
+      id: '/introducao'
+      path: '/introducao'
+      fullPath: '/introducao'
+      preLoaderRoute: typeof IntroducaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prevencao': {
+      id: '/prevencao'
+      path: '/prevencao'
+      fullPath: '/prevencao'
+      preLoaderRoute: typeof PrevencaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referencias': {
+      id: '/referencias'
+      path: '/referencias'
+      fullPath: '/referencias'
+      preLoaderRoute: typeof ReferenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConclusaoRoute: ConclusaoRoute,
+  ConsequenciasRoute: ConsequenciasRoute,
+  DesenvolvimentoRoute: DesenvolvimentoRoute,
+  IntroducaoRoute: IntroducaoRoute,
+  PrevencaoRoute: PrevencaoRoute,
+  ReferenciasRoute: ReferenciasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

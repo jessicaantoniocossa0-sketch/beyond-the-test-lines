@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Chapter order and nav come from `src/lib/capitulos.ts`; header, summary and prev/next links all read from it so the order stays in one place.
+- Chapter pages wrap content in `ChapterLayout` + `Secao` (src/components/site) for a consistent reading layout.
