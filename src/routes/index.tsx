@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero-exame.jpg";
+import heroImg from "@/assets/hero-exame-tics.jpg";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { capitulos } from "@/lib/capitulos";
@@ -72,10 +72,10 @@ function Index() {
           <div className="animate-rise relative [animation-delay:150ms]">
             <img
               src={heroImg}
-              alt="Folha de teste sobre uma secretária, com uma caneta vermelha e uma cábula escondida"
+              alt="Folha de teste de TICS sobre uma secretária, com uma caneta vermelha e uma cábula escondida"
               width={1600}
               height={1008}
-              className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl md:aspect-[4/5] md:object-[78%_50%]"
+              className="aspect-[4/3] w-full rounded-lg object-cover shadow-2xl md:aspect-[4/5] md:object-[62%_50%]"
             />
             <div className="absolute -bottom-5 left-4 rounded-md border border-border bg-card px-4 py-3 shadow-lg md:-left-8">
               <p className="red-note text-2xl">Anulado!</p>
